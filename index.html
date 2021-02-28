@@ -71,6 +71,77 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-异常" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/28/%E5%BC%82%E5%B8%B8/" class="article-date">
+  <time class="dt-published" datetime="2021-02-28T02:30:27.000Z" itemprop="datePublished">2021-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/28/%E5%BC%82%E5%B8%B8/">异常</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="编译时异常"><a href="#编译时异常" class="headerlink" title="编译时异常"></a>编译时异常</h3><p>​    概率高提早处理</p>
+<h3 id="运行时异常"><a href="#运行时异常" class="headerlink" title="运行时异常"></a>运行时异常</h3><p>​    概率低不用预处理</p>
+<hr>
+<h2 id="1-异常处理的两种方式"><a href="#1-异常处理的两种方式" class="headerlink" title="1.异常处理的两种方式"></a>1.异常处理的两种方式</h2><p><strong>在方法声明的位置上使用throws关键字</strong></p>
+<p>​        throw抛给上一级，谁掉用我我就抛给谁。若抛给了main方法，main方法继续向上抛</p>
+<p>​        抛给了调用者JVM，JVM知道这个异常的发生，只有一个结果：终止java程序的执行</p>
+<p><strong>try{}catch(){}进行捕捉</strong></p>
+<p>​        谁也不知道，我给抓住了。捕捉之后异常就没了，异常真正解决了调用者不知道。</p>
+<hr>
+<h2 id="2-异常对象的常用方法"><a href="#2-异常对象的常用方法" class="headerlink" title="2.异常对象的常用方法"></a>2.异常对象的常用方法</h2><p>1.exception.getMessage()    获取异常简单的描述信息</p>
+<p>2.e.printStackTrace()    打印异常堆栈信息</p>
+<hr>
+<h2 id="3-finally"><a href="#3-finally" class="headerlink" title="3.finally"></a>3.finally</h2><p>​    即使try语句出现了异常，finally一定会执行。通常完成资源的关闭</p>
+<p>​    try和finally,没有catch可以吗？    可以</p>
+<hr>
+<h2 id="4-面试题"><a href="#4-面试题" class="headerlink" title="4.面试题"></a>4.面试题</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">100</span>;			第一步</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> i;			第三步</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">  i++;				第二步</span><br><span class="line">&#125;</span><br><span class="line">结果为<span class="number">100</span></span><br><span class="line"><span class="keyword">finally</span>语句一定会执行</span><br><span class="line"><span class="keyword">return</span>语句只要执行，方法必然结束</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-final-finally-finalize-三者的区别"><a href="#5-final-finally-finalize-三者的区别" class="headerlink" title="5.final    finally    finalize    三者的区别"></a>5.final    finally    finalize    三者的区别</h3><p><strong>final关键字</strong></p>
+<p>​    final修饰的类无法继承</p>
+<p>​    final修饰的方法无法覆盖</p>
+<p>​    final修饰的变量不能重新赋值</p>
+<p><strong>finally关键字</strong></p>
+<p>​    和try一起联合使用，finally语句中的代码块必须执行</p>
+<p><strong>finalize标识符</strong></p>
+<p>​    是一个Object类中的方法名</p>
+<p>​    这个方法是由垃圾回收器GC负责调用的</p>
+<hr>
+<h2 id="6-java中自定义异常"><a href="#6-java中自定义异常" class="headerlink" title="6.java中自定义异常"></a>6.java中自定义异常</h2><p>两步</p>
+<p>​    第一步：编写一个类继承Exception或者RuntimeException</p>
+<p>​    第二步：提供两个构造方法，一个无参的，一个带有String参数的</p>
+<hr>
+<h2 id="7-异常与方法覆盖"><a href="#7-异常与方法覆盖" class="headerlink" title="7.异常与方法覆盖"></a>7.异常与方法覆盖</h2><p>​    重写之后的方法不能比 重写之前的方法抛出更多（更宽泛）的异常，只可以更少</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/28/%E5%BC%82%E5%B8%B8/" data-id="cklokiq0v0000fgqkfkc4e6ye" data-title="异常" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/02/27/hello-world/" class="article-date">
@@ -207,6 +278,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/02/28/%E5%BC%82%E5%B8%B8/">异常</a>
+          </li>
         
           <li>
             <a href="/2021/02/27/hello-world/">Hello World</a>
